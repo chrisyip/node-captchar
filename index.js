@@ -11,9 +11,9 @@ function md5 (data) {
   return crypto.createHash('md5').update(data, 'utf8').digest('hex')
 }
 
-function generateText (canvas, textLength, pool) {
+function generateText (canvas, textLength, pool, dummy) {
   var ctx = canvas.getContext('2d')
-    , text = r.string(textLength + 1, pool)
+    , text = r.string(dummy ? textLength + 1 : textLength, pool)
     , tmp = ''
     , textFullWidth = ctx.measureText(text).width
     , startPosX = (canvas.width - textFullWidth) / 2
@@ -27,7 +27,7 @@ function generateText (canvas, textLength, pool) {
 
     tmp += character
 
-    if (hasDummy === false && (i + 1 === len || r.bool())) {
+    if (dummy && hasDummy === false && (i + 1 === len || r.bool())) {
       ctx.fillStyle = '#f00'
       hasDummy = true
     } else {
@@ -69,7 +69,8 @@ function generate (options) {
     fontFamily: 'Times New Roman',
     textLength: 4,
     backgroundColor: '#fff',
-    pool: 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'
+    pool: 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789',
+    dummy: true
   }, options)
 
   var canvas = new Canvas(options.width, options.height)
@@ -85,7 +86,7 @@ function generate (options) {
 
   generateNoise(canvas)
 
-  code = generateText(canvas, options.textLength, options.pool)
+  code = generateText(canvas, options.textLength, options.pool, !!options.dummy)
 
   return {
     code: code,
