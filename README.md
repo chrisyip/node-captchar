@@ -69,7 +69,7 @@ captchar({
     backgroundColor: '#fff',
     outputDir: process.cwd()) + '/.captchar/',
     imageName: md5(Date.now().toString())) + '.png', // do not pass .png; recommend to generate image name manually
-    format: 'datauri' // 'stream', or output to disk,
+    format: 'fs', // 'stream', or 'datauri'. otherwise, out to `disk`
     pool: 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789',
     dummy: true // set to `false` to turn dummy off
 })
