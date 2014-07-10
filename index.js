@@ -109,10 +109,16 @@ module.exports = function (options) {
         })
       })
     } else if (options.format === 'stream') {
-      resolve({
-        src: img.canvas.pngStream(),
-        code: img.code
+      var result = { code: img.code }
+
+      Object.defineProperty(result, 'src', {
+        enumerable: true,
+        get: function () {
+          return img.canvas.pngStream()
+        }
       })
+
+      resolve(result)
     } else {
       var path = outputDir + (options.imageName || md5(Date.now().toString())) + '.png'
 
