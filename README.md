@@ -87,8 +87,8 @@ The real code is `5HPp`, `o` is dummy.
 
 - [Chris Yip](https://github.com/chrisyip/node-captchar/commits/master?author=chrisyip)
 
-[node-image]: http://img.shields.io/node/v/node-captchar.svg?style=flat-square
+[node-image]: http://img.shields.io/node/v/captchar.svg?style=flat-square
 [npm-url]: https://npmjs.org/package/node-captchar
-[npm-image]: http://img.shields.io/npm/v/node-captchar.svg?style=flat-square
+[npm-image]: http://img.shields.io/npm/v/captchar.svg?style=flat-square
 [daviddm-url]: https://david-dm.org/chrisyip/node-captchar
 [daviddm-image]: http://img.shields.io/david/chrisyip/node-captchar.svg?style=flat-square
