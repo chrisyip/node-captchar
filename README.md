@@ -1,5 +1,7 @@
 # Captchar
 
+[![Node version][node-image]][npm-url] [![NPM version][npm-image]][npm-url] [![Dependency Status][daviddm-image]][daviddm-url]
+
 Generate captcha image. Written in Node.js.
 
 ## Installation
@@ -84,3 +86,9 @@ The real code is `5HPp`, `o` is dummy.
 ## Contributors
 
 - [Chris Yip](https://github.com/chrisyip/node-captchar/commits/master?author=chrisyip)
+
+[node-image]: http://img.shields.io/node/v/node-captchar?style=flat-square
+[npm-url]: https://npmjs.org/package/node-captchar
+[npm-image]: http://img.shields.io/npm/v/node-captchar.svg?style=flat-square
+[daviddm-url]: https://david-dm.org/chrisyip/node-captchar
+[daviddm-image]: http://img.shields.io/david/chrisyip/node-captchar.svg?style=flat-square
